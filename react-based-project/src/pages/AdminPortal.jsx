@@ -21,3 +21,13 @@ export default function App() {
         return <Home />;
     }
   };
+
+  return (
+    <CoffeeProvider>
+      <div className="app">
+        <Navbar activePage={activePage} setActivePage={setActivePage} />
+        <main className="main-content">{renderPage()}</main>
+      </div>
+    </CoffeeProvider>
+  );
+}
