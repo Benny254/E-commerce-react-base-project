@@ -1,12 +1,15 @@
 import React from 'react'
 
 const CoffeeCard = (Coffee) => {
-  return (
-    <div>
+
       {Coffee.Name}
       {Coffee.Description}
       {Coffee.Origin}
       {Coffee.Price} 
+
+        return (
+    <div>
+      Coffee Details
     </div>
   )
 }
