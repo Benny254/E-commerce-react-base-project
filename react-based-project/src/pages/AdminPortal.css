@@ -1,0 +1,94 @@
+/* =========================
+   ADMIN PORTAL CONTAINER
+========================= */
+.admin-portal {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   TITLE
+========================= */
+.admin-portal h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* =========================
+   FORM STYLING
+========================= */
+.admin-portal form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.admin-portal input {
+  flex: 1;
+  min-width: 220px;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.admin-portal input:focus {
+  border-color: #3c5656;
+  box-shadow: 0 0 5px rgba(93, 150, 186, 0.3);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.admin-portal button {
+  padding: 12px 20px;
+  background: #6b4f4f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.admin-portal button:hover {
+  background: #4a3636;
+}
+
+/* =========================
+   COFFEE LIST
+========================= */
+.admin-portal h2 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 20px;
+}
+
+.admin-portal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-portal li {
+  background: #f9f9f9;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  border-left: 4px solid #6b4f4f;
+  font-size: 14px;
+}
