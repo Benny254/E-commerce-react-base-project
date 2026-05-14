@@ -6,11 +6,11 @@ const Navbar = () => {
   const location = useLocation()
   return (
     <nav className="navbar">
-      <h1>Coffee Shop</h1>
+      <h1 className='navbar-title'>Coffee Shop</h1>
       <div className="navbar-links">
-        <Link to="/">Home</Link>
-        <Link to="/shop">Shop</Link>
-        <Link to="/adminportal">Admin Portal</Link>
+        <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
+        <Link to="/shop" className={location.pathname === '/shop' ? 'active' : ''}>Shop</Link>
+        <Link to="/adminportal" className={location.pathname === '/adminportal' ? 'active' : ''}>Admin Portal</Link>
       </div>
     </nav>
   )
