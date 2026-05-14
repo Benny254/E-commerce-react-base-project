@@ -3,17 +3,25 @@ import './Navbar.css'
 import{Link,useLocation} from 'react-router-dom'
 
 const Navbar = () => {
-  const location = useLocation()
+  const location = useLocation();
   return (
     <nav className="navbar">
-      <h1>Coffee Shop</h1>
-      <div className="navbar-links">
-        <Link to="/">Home</Link>
-        <Link to="/shop">Shop</Link>
-        <Link to="/adminportal">Admin Portal</Link>
-      </div>
-    </nav>
+      <h1 className="logo">Coffee Shop</h1>
+
+<div className="navbar-links">
+  <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+    Home
+  </Link>
+  <Link to="/shop" className={location.pathname === '/shop' ? 'active' : ''}>
+    Shop
+  </Link>
+  <Link to="/admin" className={location.pathname === '/admin' ? 'active' : ''}>
+    Admin
+  </Link>
+</div>
+</nav>
   )
 }
+
 
 export default Navbar

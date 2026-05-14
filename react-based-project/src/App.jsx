@@ -4,21 +4,18 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import AdminPortal from './pages/AdminPortal';
+import { CoffeeProvider } from './context/CoffeeContext';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <CoffeeProvider>  {/* ← wrap everything in this */}
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/admin" element={<AdminPortal />} />
-        </Routes>
-      </Router>
-    </CoffeeProvider>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/admin" element={<AdminPortal />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
