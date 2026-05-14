@@ -1,16 +1,15 @@
 import React from 'react'
 
-const CoffeeCard = (Coffee) => {
-
-      {Coffee.Name}
-      {Coffee.Description}
-      {Coffee.Origin}
-      {Coffee.Price} 
-
-        return (
+const CoffeeCard = ({ coffee }) => {
+ return (
+  <>
     <div>
-      Coffee Details
+      <h2>name: {coffee.name}</h2>
+      <p>description: {coffee.description}</p>
+      <p>Origin: {coffee.origin}</p>
+      <p>Price: {coffee.price}</p>
     </div>
+</>
   )
 }
 
