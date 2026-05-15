@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CoffeeProvider } from './context/CoffeeContext';  // ← add this
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
@@ -9,13 +8,20 @@ import './App.css';
 
 export default function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/admin" element={<AdminPortal />} />
-      </Routes>
-    </Router>
+    <CoffeeProvider>
+      <Router>
+        <div className="app">
+          <Navbar />
+
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/admin" element={<AdminPortal />} />
+            </Routes>
+          </main>
+        </div>
+      </Router>
+    </CoffeeProvider>
   );
 }
