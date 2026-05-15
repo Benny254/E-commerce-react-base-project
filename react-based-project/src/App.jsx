@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
@@ -9,7 +9,6 @@ import './App.css';
 export default function App() {
   return (
     <CoffeeProvider>
-      <Router>
         <div className="app">
           <Navbar />
 
@@ -20,8 +19,7 @@ export default function App() {
               <Route path="/admin" element={<AdminPortal />} />
             </Routes>
           </main>
-        </div>
-      </Router>
+        </div>  
     </CoffeeProvider>
   );
 }
