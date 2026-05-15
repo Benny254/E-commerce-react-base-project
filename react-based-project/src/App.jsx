@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
@@ -7,19 +7,25 @@ import { CoffeeProvider } from './context/CoffeeContext';
 import './App.css';
 
 export default function App() {
+  const navigate = useNavigate();
+
+  const goToShop = () => {
+    navigate("/shop");
+  };
+
   return (
     <CoffeeProvider>
-        <div className="app">
-          <Navbar />
+      <div className="app">
+        <Navbar />
 
-          <main className="main-content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/shop" element={<Shop />} />
-              <Route path="/admin" element={<AdminPortal />} />
-            </Routes>
-          </main>
-        </div>  
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home onShopClick={goToShop} />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/admin" element={<AdminPortal />} />
+          </Routes>
+        </main>
+      </div>
     </CoffeeProvider>
   );
 }
