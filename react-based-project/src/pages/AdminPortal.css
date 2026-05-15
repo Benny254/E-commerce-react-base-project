@@ -1,94 +1,144 @@
-/* =========================
-   ADMIN PORTAL CONTAINER
-========================= */
-.admin-portal {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  font-family: Arial, sans-serif;
+:root {
+  --bg-coffee: #d7bcab; /* Matching the background in Screenshot from 2026-05-13 10-43-27.jpg */
+  --card-cream: #fdf6e4;
+  --text-main: #1a0f0a;
+  --accent-rust: #a44322;
+  --error-red: #d32f2f;
+  --success-green: #2e7d32;
 }
 
-/* =========================
-   TITLE
-========================= */
-.admin-portal h1 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 28px;
-  font-weight: 700;
-  color: #2c3e50;
-}
-
-/* =========================
-   FORM STYLING
-========================= */
-.admin-portal form {
+.admin-page {
+  background-color: var(--bg-coffee);
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
   justify-content: center;
-  margin-bottom: 30px;
+  align-items: center;
+  padding: 20px;
 }
 
-.admin-portal input {
-  flex: 1;
-  min-width: 220px;
-  padding: 12px 14px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  font-size: 14px;
-  transition: all 0.3s ease;
+.admin-card {
+  background-color: var(--card-cream);
+  width: 100%;
+  max-width: 450px;
+  border-radius: 40px; /* High radius as seen in Screenshot from 2026-05-13 10-43-27.jpg */
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
-.admin-portal input:focus {
-  border-color: #3c5656;
-  box-shadow: 0 0 5px rgba(93, 150, 186, 0.3);
+.admin-title {
+  font-family: "Serif", Georgia, serif;
+  color: var(--text-main);
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
-/* =========================
-   BUTTON
-========================= */
-.admin-portal button {
-  padding: 12px 20px;
-  background: #6b4f4f;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s ease;
+/* Success Banner */
+.success-banner {
+  background-color: rgba(46, 125, 50, 0.1);
+  color: var(--success-green);
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
-.admin-portal button:hover {
-  background: #4a3636;
-}
-
-/* =========================
-   COFFEE LIST
-========================= */
-.admin-portal h2 {
-  margin-bottom: 15px;
-  color: #2c3e50;
-  font-size: 20px;
-}
-
-.admin-portal ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.admin-portal li {
-  background: #f9f9f9;
-  padding: 12px 15px;
-  margin-bottom: 10px;
-  border-radius: 8px;
+/* Form Styling */
+.form-body {
   display: flex;
-  justify-content: space-between;
-  border-left: 4px solid #6b4f4f;
-  font-size: 14px;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.field-input {
+  background-color: transparent;
+  border: 1.5px solid #4c5c13;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: var(--text-main);
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--accent-rust);
+}
+
+.field-input.input-error {
+  border-color: var(--error-red);
+}
+
+.field-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+/* Validation Text */
+.error-text {
+  color: var(--error-red);
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+.assistive-text {
+  color: #a0958e;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+/* Button */
+.submit-btn {
+  margin-top: 30px;
+  width: 100%;
+  background-color: var(--text-main);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: var(--accent-rust);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Wrapper for error icons */
+.input-wrapper {
+  position: relative;
+}
+
+.error-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--error-red);
 }
