@@ -52,97 +52,99 @@ export default function AdminPortal() {
       <div className="admin-card">
         <h2 className="admin-title">Add New Coffee</h2>
 
-        {submitted && (
-          <div className="success-banner">✓ Coffee added to the shop!</div>
+    {submitted && (
+      <div className="success-banner">✓ Coffee added to the shop!</div>
+    )}
+
+    <div className="form-body">
+      <div className="field-group">
+        <label className="field-label">Coffee Name</label>
+        <input
+          className={`field-input ${errors.name ? "input-error" : ""}`}
+          type="text"
+          name="name"
+          placeholder="Type here"
+          value={form.name}
+          onChange={handleChange}
+        />
+        {errors.name ? (
+          <span className="error-text">{errors.name}</span>
+        ) : (
+          <span className="assistive-text">Assistive Text</span>
         )}
+      </div>
 
-        <div className="form-body">
-          <div className="field-group">
-            <label className="field-label">Coffee Name</label>
-            <input
-              className={`field-input ${errors.name ? "input-error" : ""}`}
-              type="text"
-              name="name"
-              placeholder="Type here"
-              value={form.name}
-              onChange={handleChange}
-            />
-            {errors.name ? (
-              <span className="error-text">{errors.name}</span>
-            ) : (
-              <span className="assistive-text">Assistive Text</span>
-            )}
-          </div>
+      <div className="field-group">
+        <label className="field-label">Description</label>
+        <input
+          className={`field-input ${errors.description ? "input-error" : ""}`}
+          type="text"
+          name="description"
+          placeholder="Typing |"
+          value={form.description}
+          onChange={handleChange}
+        />
+        {errors.description ? (
+          <span className="error-text">{errors.description}</span>
+        ) : (
+          <span className="assistive-text">Assistive Text</span>
+        )}
+      </div>
 
-          <div className="field-group">
-            <label className="field-label">Description</label>
-            <input
-              className={`field-input ${errors.description ? "input-error" : ""}`}
-              type="text"
-              name="description"
-              placeholder="Typing |"
-              value={form.description}
-              onChange={handleChange}
-            />
-            {errors.description ? (
-              <span className="error-text">{errors.description}</span>
-            ) : (
-              <span className="assistive-text">Assistive Text</span>
-            )}
-          </div>
-
-          <div className="field-group">
-            <label className="field-label">Origin</label>
-            <div className="input-wrapper">
-              <input
-                className={`field-input ${errors.origin ? "input-error" : ""}`}
-                type="text"
-                name="origin"
-                placeholder="Typing |"
-                value={form.origin}
-                onChange={handleChange}
-              />
-              {errors.origin && <span className="error-icon">⚠</span>}
-            </div>
-            {errors.origin && (
-              <span className="error-text">{errors.origin}</span>
-            )}
-          </div>
-
-          <div className="field-group">
-            <label className="field-label">Price</label>
-            <input
-              className={`field-input ${errors.price ? "input-error" : ""}`}
-              type="text"
-              name="price"
-              placeholder="e.g. $15.99"
-              value={form.price}
-              onChange={handleChange}
-            />
-            {errors.price && (
-              <span className="error-text">{errors.price}</span>
-            )}
-          </div>
-
-          <div className="field-group">
-            <label className="field-label">Location</label>
-            <select
-              className="field-input field-select"
-              name="location"
-              value={form.location}
-              onChange={handleChange}
-            >
-              {locations.map((loc) => (
-                <option key={loc} value={loc}>{loc}</option>
-              ))}
-            </select>
-          </div>
+      <div className="field-group">
+        <label className="field-label">Origin</label>
+        <div className="input-wrapper">
+          <input
+            className={`field-input ${errors.origin ? "input-error" : ""}`}
+            type="text"
+            name="origin"
+            placeholder="Typing |"
+            value={form.origin}
+            onChange={handleChange}
+          />
+          {errors.origin && <span className="error-icon">⚠</span>}
         </div>
+        {errors.origin && (
+          <span className="error-text">{errors.origin}</span>
+        )}
+      </div>
 
-        <button className="submit-btn" onClick={handleSubmit}>
-          Submit
-        </button>
+      <div className="field-group">
+        <label className="field-label">Price</label>
+        <input
+          className={`field-input ${errors.price ? "input-error" : ""}`}
+          type="text"
+          name="price"
+          placeholder="e.g. $15.99"
+          value={form.price}
+          onChange={handleChange}
+        />
+        {errors.price && (
+          <span className="error-text">{errors.price}</span>
+        )}
+      </div>
+
+      <div className="field-group">
+        <label className="field-label">Location</label>
+        <select
+          className="field-input field-select"
+          name="location"
+          value={form.location}
+          onChange={handleChange}
+        >
+          {locations.map((loc) => (
+            <option key={loc} value={loc}>{loc}</option>
+          ))}
+        </select>
       </div>
     </div>
+
+    <button className="submit-btn" onClick={handleSubmit}>
+      Submit
+    </button>
+  </div>
+</div>
   );
 }
+
+
