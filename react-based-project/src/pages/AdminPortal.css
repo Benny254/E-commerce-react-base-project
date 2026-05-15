@@ -1,44 +1,11 @@
-:root {
-  --bg-coffee: #d7bcab; /* Matching the background in Screenshot from 2026-05-13 10-43-27.jpg */
-  --card-cream: #fdf6e4;
-  --text-main: #1a0f0a;
-  --accent-rust: #a44322;
-  --error-red: #d32f2f;
-  --success-green: #2e7d32;
-}
-
-.admin-page {
-  background-color: var(--bg-coffee);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.admin-card {
-  background-color: var(--card-cream);
-  width: 100%;
-  max-width: 450px;
-  border-radius: 40px; /* High radius as seen in Screenshot from 2026-05-13 10-43-27.jpg */
-  padding: 40px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-
-.admin-title {
-  font-family: "Serif", Georgia, serif;
-  color: var(--text-main);
-  font-size: 2rem;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-/* Success Banner */
-.success-banner {
-  background-color: rgba(46, 125, 50, 0.1);
-  color: var(--success-green);
-  padding: 12px;
+/* =========================
+   ADMIN PORTAL CONTAINER
+========================= */
+.admin-portal {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
   border-radius: 12px;
   text-align: center;
   margin-bottom: 20px;

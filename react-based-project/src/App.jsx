@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CoffeeProvider } from './context/CoffeeContext';  // ← add this
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import AdminPortal from './pages/AdminPortal';
+import { CoffeeProvider } from './context/CoffeeContext';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <Router>
       <Navbar />
@@ -17,5 +19,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
